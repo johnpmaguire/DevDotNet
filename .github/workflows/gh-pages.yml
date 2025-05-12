@@ -27,7 +27,7 @@ jobs:
 
     # Step 4: Build the project
     - name: Build the project
-      run: dotnet publish -c Release -o build
+      run: dotnet publish ./DevDotNet.csproj -c Release -o build
 
     # Step 5: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
