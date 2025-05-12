@@ -218,6 +218,13 @@ main[b-lj7xe0pwzk] {
     font-size: 2rem;
 }
 
+@media (max-width: 767.98px) {
+    .home-logo-img[b-0fgjmyqh8n] {
+        max-height: 120px; /* Adjust as needed */
+        height: auto;
+    }
+}
+
 @media (min-width: 992px) {
     .title[b-0fgjmyqh8n] {
         font-size: 3.5rem;
