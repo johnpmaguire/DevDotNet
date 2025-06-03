@@ -1,35 +1,32 @@
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master # Trigger deployment when changes are pushed to the main branch
+      - master  # or main, depending on your default branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Setup .NET
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x # Use .NET 8
+        dotnet-version: 8.0.x
 
-    # Step 3: Restore dependencies
     - name: Restore dependencies
       run: dotnet restore
 
-    # Step 4: Build the project
     - name: Build the project
-      run: dotnet publish ./DevDotNet.csproj -c Release -o build
+      run: dotnet publish -c Release -p:BaseHref='/DevDotNet/' -o build
 
-    # Step 5: Deploy to GitHub Pages
+    - name: Add 404.html
+      run: cp build/wwwroot/index.html build/wwwroot/404.html
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
