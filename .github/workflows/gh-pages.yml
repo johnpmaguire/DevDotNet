@@ -27,7 +27,8 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish -c Release -o release
+        # NOTE: Add the /p:BaseHref parameter below!
+        run: dotnet publish -c 
 
       - name: Copy output to wwwroot
         run: |
