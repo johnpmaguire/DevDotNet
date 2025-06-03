@@ -28,7 +28,7 @@ jobs:
 
       - name: Publish
         # NOTE: Add the /p:BaseHref parameter below!
-        run: dotnet publish -c Release -o release /p:BaseHref=/devdotnet/
+        run: dotnet publish -c 
 
       - name: Copy output to wwwroot
         run: |
