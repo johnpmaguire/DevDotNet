@@ -1,38 +1,45 @@
-name: Deploy to GitHub Pages
+name: Deploy Blazor WebAssembly to GitHub Pages
 
 on:
   push:
     branches:
-      - master  # or main, depending on your default branch
+      - master
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 8.0.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-    - name: Build the project
-  run: dotnet publish -c Release -p:BaseHref='/DevDotNet/' -o build
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
 
-    - name: Add .nojekyll file
-      run: touch build/wwwroot/.nojekyll
+      - name: Publish
+        run: dotnet publish -c Release -o release
 
-    - name: Add 404.html
-      run: cp build/wwwroot/index.html build/wwwroot/404.html
+      - name: Copy output to wwwroot
+        run: |
+          mkdir -p out
+          cp -r release/wwwroot/* out/
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/wwwroot
-        force_orphan: true
+      - name: Add .nojekyll
+        run: touch out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
