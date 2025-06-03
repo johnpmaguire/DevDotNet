@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <!-- DevDotNet.csproj -->
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <StaticWebAssetBasePath>$(BaseHref)</StaticWebAssetBasePath>
+    <!-- Use a fixed path instead of a variable -->
+    <StaticWebAssetBasePath>/DevDotNet/</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
