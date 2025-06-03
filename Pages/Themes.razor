@@ -1,0 +1,80 @@
+﻿@page "/themes"
+@inject IJSRuntime JS
+
+<PageTitle>Template Themes</PageTitle>
+
+<div class="container-xxl mt-3">
+    <h1 class="text-center">
+        Built in themes for any template
+    </h1>
+
+    <div class="d-flex align-items-center justify-content-center my-3 flex-wrap gap-3">
+        @foreach (string theme in templateThemes)
+        {
+            <div class="card" data-cf-theme="@theme">
+                <div class="card-body">
+                    <h3 class="card-title d-flex align-items-center">
+                        Theme:&nbsp;<span style="color: var(--cf-theme-core)">@theme</span>
+                        <button class="btn btn-primary ms-auto" @onclick="() => SetTheme(theme)">Set Theme</button>
+                    </h3>
+                    <h6 class="small fw-bold mt-3">Palette</h6>
+                    <div class="d-flex align-items-stretch w-100 gap-0">
+                        @foreach (string weight in Weights)
+                        {
+                            <div style="background-color: var(--cf-theme-@weight); flex: 1; height: 30px;" title="@weight"></div>
+                        }
+                    </div>
+                    <div class="my-3">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-light">Light</button>
+                        <button class="btn btn-dark">Dark</button>
+                    </div>
+                    <div>
+                        text with a <a href="#">clickable link</a> in the middle.
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+
+    public async Task SetTheme(string theme)
+    {
+        // This method can be used to set the theme dynamically
+        await JS.InvokeVoidAsync("setTheme", theme);
+    }
+    List<string> templateThemes = new()
+    {
+        "code-magic",
+        "blue",
+        "indigo",
+        "purple",
+        "pink",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "cyan",
+        "gray"
+    };
+
+    List<string> Weights = new()
+    {
+        "core",
+        "100",
+        "150",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "850",
+        "900"
+    };
+}
