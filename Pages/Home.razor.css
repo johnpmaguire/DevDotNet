@@ -17,6 +17,54 @@
     font-size: 1rem;
 }
 
-.devicons{
-    font-size: 2rem;
+.brand {
+    font-size: 1.5rem;
 }
+
+.devicons {
+    font-size: 1.5rem;
+}
+
+/* Hero section CTA button styling */
+.hero-section-cta {
+    background: linear-gradient(135deg, #00FFE0FF 0%, #8E71FFFF 57%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    margin: 1.5rem;
+    width: 80%;
+}
+
+    .hero-section-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 117, 252, 0.6);
+    }
+
+    .hero-section-cta:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(37, 117, 252, 0.4);
+    }
+
+    .hero-section-cta::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .hero-section-cta:hover::after {
+        opacity: 0.15;
+    }

@@ -1,86 +1,30 @@
 :root {
-    --cf-theme-core: var(--cf-code-magic-core);
-    /* app background */
-    --cf-theme-100: var(--cf-code-magic-100);
-    /* subtle background */
-    --cf-theme-150: var(--cf-code-magic-150);
-    /* UI element background */
-    --cf-theme-200: var(--cf-code-magic-200);
-    /* hovered UI background */
-    --cf-theme-300: var(--cf-code-magic-300);
-    /* active UI */
-    --cf-theme-400: var(--cf-code-magic-400);
-    /* selected UI */
-    --cf-theme-500: var(--cf-code-magic-500);
-    /* subtle borders and spearators */
-    --cf-theme-600: var(--cf-code-magic-600);
-    /* element border / focus rings */
-    --cf-theme-700: var(--cf-code-magic-700);
-    /* hovered border  */
-    --cf-theme-800: var(--cf-code-magic-800);
-    /* hovered dark backgrounds */
-    --cf-theme-850: var(--cf-code-magic-850);
-    /* dark backgrounds */
-    --cf-theme-900: var(--cf-code-magic-900);
-    /* alert backgrounds */
-    --cf-theme-alert: var(--cf-code-magic-alert);
-    /* alert hover background*/
-    --cf-theme-alert-hover: var(--cf-code-magic-alert-hover);
-    /* alert warning backgrounds */
-    --cf-theme-warning-hover: var(--cf-code-magic-warning-hover);
-    /* warning background */
-    --cf-theme-warning: var(--cf-code-magic-warning);
-    /* #region code-magic */
-    --cf-code-magic-core: #f2c864; /* yellow accent */
-    --cf-code-magic-100: hsl(192, 77%, 79%); /* turqoise */
-    --cf-code-magic-150: hsl(192, 77%, 74%);
-    --cf-code-magic-200: #87bbd7;
-    --cf-code-magic-300: hsl(192, 77%, 69%);
-    --cf-code-magic-400: #f2c864;
-    --cf-code-magic-500: hsl(192, 77%, 49%);
-    --cf-code-magic-600: hsl(192, 77%, 39%);
-    --cf-code-magic-700: hsl(192, 77%, 29%);
-    --cf-code-magic-800: hsl(192, 77%, 19%);
-    --cf-code-magic-850: hsl(192, 77%, 15%);
-    --cf-code-magic-900: hsl(192, 77%, 9%);
-    --cf-code-magic-alert: #f2c864;
-    --cf-code-magic-alert-hover: #f2c810;
-    --cf-code-magic-warning: hsl(331, 47%, 40%);
-    --cf-code-magic-warning-hover: hsl(331, 47%, 30%);
-    /* #endregion code-magic */
+    --ff-title-font: 'Bebas Neue', sans-serif;
+    --ff-body-font: 'Montserrat', sans-serif;
+    --fs-font-size: 1.1rem;
+    --primary-dark-color: #212121;
+    --primary-light-color: #deeefb;
+    --cf-title-color: var(--primary-dark-color);
 }
 
 html, body {
-    font-family: var(--cf-body-font);
-    font-size: var(--cf-font-size);
+    font-family: var(--ff-body-font);
+    font-size: var(--fs-font-size);
     height: 100%;
     min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--cf-title-font);
+    font-family: var(--ff-title-font)
 }
-
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: var(--cf-title-font);
-}
-
 
 #app {
     height: 100%;
 }
 
 
+
 /* #region Blazor default CSS */
-
-h1:focus {
-    outline: none;
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }
@@ -94,11 +38,9 @@ h1:focus {
 }
 
 #blazor-error-ui {
-    color-scheme: light only;
     background: lightyellow;
     bottom: 0;
     box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
     display: none;
     left: 0;
     padding: 0.6rem 1.25rem 0.7rem 1.25rem;
@@ -160,14 +102,4 @@ h1:focus {
 code {
     color: #c02d76;
 }
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
-}
-
 /* #endregion Blazor default CSS */
