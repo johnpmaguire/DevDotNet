@@ -13,5 +13,33 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.16" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Componets\UI\Tasker\" />
+    <Folder Include="Componets\UI\Shared\" />
+    <Folder Include="wwwroot\images\Tasker\" />
+    <Folder Include="Models\Home\" />
+    <Folder Include="Models\Tasker\" />
+    <Folder Include="Models\Shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\DevDotNet.styles.css" />
+    <None Include="wwwroot\images\FizzBuzz\fizzbuzzLogo.png" />
+    <None Include="wwwroot\images\FizzBuzz\fizzbuzzTitleLogo.png" />
+    <None Include="wwwroot\images\Shared\CSS logo with three .png" />
+    <None Include="wwwroot\images\Shared\dddLogo.png" />
+    <None Include="wwwroot\images\Shared\dddlogosmall.png" />
+    <None Include="wwwroot\images\Shared\LandingPageBG.png" />
+    <None Include="wwwroot\images\Shared\LandingPageLogo.png" />
+    <None Include="wwwroot\images\Shared\logodevdotnet.png" />
+    <None Include="wwwroot\images\Shared\MagicCodeHLogo.png" />
+    <None Include="wwwroot\images\Shared\MagicCodeSquareLogo.png" />
+    <None Include="wwwroot\images\Shared\MarkSpectreLogoLight.png" />
+    <None Include="wwwroot\images\Shared\NameLogo.png" />
+    <None Include="wwwroot\images\Shared\NameLogoColor.png" />
+    <None Include="wwwroot\images\Shared\nameLogoWhite.png" />
+    <None Include="wwwroot\images\Shared\untitled.afdesign" />
+  </ItemGroup>
+
 </Project>
 
